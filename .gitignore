@@ -36,6 +36,8 @@ Thumbs.db
 
 # Typing TSD #
 /src/typings/tsd/
+/src/typings/
+!/src/typings/_custom.d.ts
 /typings/
 /tsd_typings/
 
