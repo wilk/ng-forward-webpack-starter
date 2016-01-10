@@ -56,9 +56,7 @@ module.exports = {
   //
   entry: {
     'angular2': [
-      // Angular 2 Deps
-      '@reactivex/rxjs',
-      'reflect-metadata'
+      './src/vendor.ts'
     ],
     'app': [
       // App
@@ -128,7 +126,8 @@ module.exports = {
     ],
     noParse: [
       /rtts_assert\/src\/rtts_assert/,
-      /reflect-metadata/
+      /reflect-metadata/,
+      path.join(__dirname, 'node_modules', 'angular2', 'bundles')
     ]
   },
 

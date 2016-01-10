@@ -3,8 +3,7 @@
 /*
  * Providers provided by Angular
  */
-import 'angular';
-import {bootstrap} from 'ng-forward/cjs';
+import {bootstrap} from 'angular2/platform/browser';
 
 /*
  * App Component

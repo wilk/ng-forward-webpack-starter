@@ -1,7 +1,8 @@
 /*
  * Angular 2 decorators and services
  */
-import {Component} from 'ng-forward/cjs';
+import {Component} from 'angular2/core';
+import {FORM_DIRECTIVES} from 'angular2/common';
 
 /*
  * App Component
@@ -12,21 +13,22 @@ import {Component} from 'ng-forward/cjs';
   // for `document.querySelectorAll(selector)` in our index.html
   // where, in this case, selector is the string 'app'
   selector: 'app', // <app></app>
+  directives: [FORM_DIRECTIVES],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   template: `
   <header>
-    <h1>Hello {{ app.title }}</h1>
+    <h1>Hello {{ title }}</h1>
   </header>
 
   <main>
     Your Content Here
     <div>
 
-      <input type="text" ng-model="title" autofocus>
+      <input type="text" [(ngModel)]="title" autofocus>
     </div>
 
-    <pre>this.title = {{ app.title | json }}</pre>
-    <pre>this.data = {{ app.data | json }}</pre>
+    <pre>this.title = {{ title }}</pre>
+    <pre>this.data = {{ data | json }}</pre>
 
   </main>
   `
