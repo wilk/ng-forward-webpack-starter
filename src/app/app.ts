@@ -22,7 +22,7 @@ import {Component} from 'ng-forward/cjs';
     Your Content Here
     <div>
 
-      <input type="text" ng-model="title" autofocus>
+      <input type="text" ng-model="app.title" autofocus>
     </div>
 
     <pre>this.title = {{ app.title | json }}</pre>

@@ -55,11 +55,7 @@ module.exports = {
 
   //
   entry: {
-    'angular2': [
-      // Angular 2 Deps
-      '@reactivex/rxjs',
-      'reflect-metadata'
-    ],
+    'angular2': './src/vendor',
     'app': [
       // App
 
