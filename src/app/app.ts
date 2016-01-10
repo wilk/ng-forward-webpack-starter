@@ -17,27 +17,37 @@ import {FORM_DIRECTIVES} from 'angular2/common';
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
   template: `
   <header>
-    <h1>Hello {{ title }}</h1>
+    <h1>{{title}}</h1>
   </header>
 
   <main>
-    Your Content Here
+    Todo List
+
     <div>
-
-      <input type="text" [(ngModel)]="title" autofocus>
+      <input type="text" (keyup)="addElement($event)" autofocus>
     </div>
-
-    <pre>this.title = {{ title }}</pre>
-    <pre>this.data = {{ data | json }}</pre>
-
+    <ul>
+      <li *ngFor="#element of list">{{element}}</li>
+    </ul>
   </main>
   `
 })
 export class App {
   // These are member type
   title: string;
-  data: Array<any> = []; // default data
+  list: string[];
+
   constructor() {
-    this.title = 'ng-forward';
+    this.title = 'ng-forward with Angular 2.x';
+    this.list = ['Study', 'Work', 'Party'];
+  }
+
+  addElement($event): void {
+    $event.preventDefault();
+
+    if ($event.keyCode === 13) {
+      this.list.push($event.target.value);
+      $event.target.value = '';
+    }
   }
 }
